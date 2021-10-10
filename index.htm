@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl" dir="ltr">
+<head>
+	<title>Edytorek Drabinek</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="./inc/css/main.css" />
+	<script type="text/javascript" src="./inc/js/edit.js"></script>
+</head>
+<body><a name="top" id="top"></a>
+	<p><a href="#wynik" onclick="generuj()">generuj</a> &bull; <a href="#wynik">pobieranie</a> &bull; &bull; <a href="http://pl.wikipedia.org/wiki/Wikipedia:Szablony_kraj%C3%B3w_z_flagami">Wikipedia:Szablony krajów z flagami (kody krajów)</a></p>
+
+	<table border="0" cellpadding="0" cellspacing="0" style="font-size: 90%; margin:0px;">
+	<tr>
+	<td></td>
+	<td align="center" colspan="3" style="border:1px solid #aaa;" bgcolor="#f2f2f2" class="input_holder"><input type="text" id="RD1" value="Runda pierwsza" /></td>
+	<td colspan="2" ></td>
+	<td align="center" colspan="3" style="border:1px solid #aaa;" bgcolor="#f2f2f2" class="input_holder"><input type="text" id="RD2" value="Runda druga" /></td>
+	<td colspan="2" ></td>
+	<td align="center" colspan="3" style="border:1px solid #aaa;" bgcolor="#f2f2f2" class="input_holder"><input type="text" id="RD3" value="Ćwierćfinały" /></td>
+	<td colspan="2" ></td>
+	<td align="center" colspan="3" style="border:1px solid #aaa;" bgcolor="#f2f2f2" class="input_holder"><input type="text" id="RD4" value="Półfinały" /></td>
+	<td colspan="2" ></td>
+	<td align="center" colspan="3" style="border:1px solid #aaa;" bgcolor="#f2f2f2" class="input_holder"><input type="text" id="RD5" value="Finał" /></td>
+
+	</tr>
+	<tr>
+	<td width="1">&nbsp;</td>
+	<td width="35"></td>
+	<td width="130"></td>
+	<td width="22"></td>
+	<td width="5"></td>
+	<td width="5"></td>
+	<td width="35"></td>
+	<td width="130"></td>
+	<td width="22"></td>
+	<td width="5"></td>
+	<td width="5"></td>
+	<td width="35"></td>
+	<td width="130"></td>
+	<td width="22"></td>
+	<td width="5"></td>
+	<td width="5"></td>
+	<td width="35"></td>
+	<td width="130"></td>
+	<td width="22"></td>
+	<td width="5"></td>
+	<td width="5"></td>
+	<td width="35"></td>
+	<td width="130"></td>
+	<td width="22"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed01" value="" /></td>
+	<td style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team01" value="" /></td>
+	<td align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score01" value="" /></td>
+	<td align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed02" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team02" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score02" value="" /></td>
+	<td rowspan="6" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed01" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team01" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score01" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="3"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed02" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team02" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score02" value="" /></td>
+	<td rowspan="12" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed03" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team03" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score03" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed04" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team04" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score04" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td colspan="5"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD3-seed01" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-team01" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-score01" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="8" align="center" id="group1"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD3-seed02" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-team02" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-score02" value="" /></td>
+	<td rowspan="24" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed05" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team05" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score05" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed06" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team06" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score06" value="" /></td>
+	<td rowspan="6" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed03" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team03" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score03" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="3"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed04" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team04" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score04" value="" /></td>
+	<td rowspan="12" align="center" style="border-width:1px 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed07" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team07" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score07" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed08" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team08" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score08" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td colspan="10"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD4-seed01" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD4-team01" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD4-score01" value="" /></td>
+	<td rowspan="2" align="center" style="border-width: 0 0 1px 0; border-style:solid; border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td rowspan="2"></td>
+	<td height="7"></td>
+	<td rowspan="2" colspan="13"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD4-seed02" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD4-team02" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD4-score02" value="" /></td>
+	<td rowspan="48" align="center" style="border-width: 1px 1px 1px 0; border-style:solid; border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed09" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team09" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score09" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed10" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team10" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score10" value="" /></td>
+	<td rowspan="6" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed05" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team05" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score05" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="3"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed06" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team06" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score06" value="" /></td>
+	<td rowspan="12" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed11" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team11" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score11" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed12" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team12" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score12" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td colspan="5"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD3-seed03" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-team03" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-score03" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="8" align="center" id="group2"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD3-seed04" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-team04" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-score04" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed13" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team13" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score13" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed14" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team14" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score14" value="" /></td>
+	<td rowspan="6" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed07" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team07" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score07" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="3"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed08" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team08" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score08" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed15" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team15" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score15" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed16" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team16" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score16" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td colspan="15"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD5-seed01" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD5-team01" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD5-score01" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td colspan="19"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD5-seed02" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD5-team02" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD5-score02" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed17" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team17" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score17" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed18" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team18" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score18" value="" /></td>
+	<td rowspan="6" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed09" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team09" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score09" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="3"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed10" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team10" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score10" value="" /></td>
+	<td rowspan="12" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed19" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team19" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score19" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed20" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team20" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score20" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td colspan="5"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD3-seed05" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-team05" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-score05" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="8" align="center" id="group3"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD3-seed06" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-team06" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-score06" value="" /></td>
+	<td rowspan="24" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed21" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team21" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score21" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed22" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team22" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score22" value="" /></td>
+	<td rowspan="6" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed11" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team11" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score11" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="3"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed12" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team12" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score12" value="" /></td>
+	<td rowspan="12" align="center" style="border-width:1px 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed23" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team23" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score23" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed24" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team24" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score24" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td colspan="10"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD4-seed03" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD4-team03" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD4-score03" value="" /></td>
+
+	</tr>
+	<tr>
+	<td rowspan="2"></td>
+	<td height="7"></td>
+	<td rowspan="2" colspan="13"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD4-seed04" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD4-team04" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD4-score04" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid; border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed25" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team25" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score25" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed26" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team26" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score26" value="" /></td>
+	<td rowspan="6" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed13" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team13" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score13" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="3"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed14" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team14" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score14" value="" /></td>
+	<td rowspan="12" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed27" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team27" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score27" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed28" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team28" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score28" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td colspan="5"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD3-seed07" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-team07" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-score07" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="8" align="center" id="group4"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD3-seed08" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-team08" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD3-score08" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed29" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team29" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score29" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed30" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team30" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score30" value="" /></td>
+	<td rowspan="6" align="center" style="border-width:1px 1px 1px 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:0 0 1px 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed15" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team15" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score15" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" colspan="3"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD2-seed16" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-team16" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD2-score16" value="" /></td>
+	<td rowspan="2" align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td rowspan="2" align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed31" value="" /></td>
+	<td rowspan="2" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team31" value="" /></td>
+	<td rowspan="2" align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score31" value="" /></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+
+	</tr>
+	<tr>
+	<td height="7"></td>
+	<td align="center" bgcolor="#f2f2f2" style="border:1px solid #aaa;" class="input_holder"><input type="text" id="RD1-seed32" value="" /></td>
+	<td style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-team32" value="" /></td>
+	<td align="center" style="border:1px solid #aaa;" bgcolor="#f9f9f9" class="input_holder"><input type="text" id="RD1-score32" value="" /></td>
+	<td align="center" style="border-width:1px 0 0 0; border-style:solid;border-color:black;"></td>
+
+	</tr>
+	</table>
+	
+	<p><a href="#top" onclick="pobierz()" id="wynik">pobierz</a> &bull; <a href="#top">generowanie/wpisywanie</a></p>
+	<textarea id="pole_szablonu" style="width:100%; height:400px"></textarea>
+	<p><a href="#top" onclick="pobierz()">pobierz</a> &bull; <a href="#top">generowanie/wpisywanie</a></p>
+</body>
+</html>
