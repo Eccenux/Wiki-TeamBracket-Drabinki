@@ -38,12 +38,12 @@
 			team2 = document.getElementById('RD'+rd+'-team'+tmp);
 			score2 = document.getElementById('RD'+rd+'-score'+tmp);
 			//txt = score1.value+'>'+ score2.value + '? = '+(parseInt(score1.value)>parseInt(score2.value))+'\n' + txt;
-			if (parseInt(score1.value)>parseInt(score2.value) || score1.value.indexOf('wo')==0)
+			if (parseInt(score1.value)>parseInt(score2.value) || score1.value.search(/w\/?o/)==0)
 			{
 				team1.the_winner = 1;
 				score1.the_winner = 1;
 			}
-			else if (parseInt(score1.value)<parseInt(score2.value) || score2.value.indexOf('wo')==0)
+			else if (parseInt(score1.value)<parseInt(score2.value) || score2.value.search(/w\/?o/)==0)
 			{
 				team2.the_winner = 1;
 				score2.the_winner = 1;
@@ -88,6 +88,11 @@ function pobierz()
 	var el_sz = document.getElementById('pole_szablonu');
 	var txt = el_sz.value;
 	var inps = document.getElementsByTagName('input');
+	
+	// spr. szablonu
+	if (txt.search(/\{\{32TeamBracket/i) < 0) {
+		alert('Nie znaleziono szablonu 32TeamBracket');
+	}
 
 	//
 	// czyszczenie nazw rund
@@ -108,28 +113,40 @@ function pobierz()
 	var re,val;
 	for (var i=0; i<inps.length; i++)
 	{
-		re = new RegExp(inps[i].id+'[ ]*=[ ]*(.+)');
-		val = txt.match(re);
-		if (val==null)
+		let id = inps[i].id;	// id = parameter name (e.g. RD1-seed01)
+		let isHeader = id.search(/^RD[0-9]+$/) === 0;
+		
+		// match parameter + value
+		re = new RegExp(id+'[ ]*=[ ]*(.+)');
+		let matches = txt.match(re);
+		if (matches==null)
 		{
 			continue;
 		}
-		// usuwanie spacji i boldów
-		val = val[1].replace(/[ \t]*$/,'').replace(/^[ \t]*/,'').replace(/'''/g,'');
+		val = matches[1];
+		
+		//console.log({id:id, val:val});
+		// usuwanie spacji (trim)
+		val = val.replace(/[ \t]*$/,'').replace(/^[ \t]*/,'');
+		// i boldów
+		if (!isHeader)
+		{
+			val = val.replace(/'''/g,'');
+		}
 		
 		if (val=='')
 		{
 			continue;
 		}
 		// flaga
-		if (inps[i].id.indexOf('seed')>0 && val.indexOf('{')!=-1)
+		if (id.indexOf('seed')>0 && val.indexOf('{')!=-1)
 		{
-			val = val.replace(/\{\{Flaga\|(.*)\}\}/,'$1');
+			val = val.replace(/\{\{Flaga\|(.*)\}\}/i,'$1');
 		}
-		// zawodnik
-		else if (inps[i].id.indexOf('team')>0 && val.indexOf('[')!=-1)
+		// zawodnik (usuń linki jeśli są)
+		else if (id.indexOf('team')>0 && val.indexOf('[')!=-1)
 		{
-			val = val.replace(/\[\[([^|\]]*)\]\]/,'$1');
+			val = val.replace(/^\[\[([^|\]]*)\]\]$/,'$1');
 		}
 		
 		inps[i].value=val;
@@ -138,6 +155,7 @@ function pobierz()
 	//
 	// Porządki
 	//
+	// rounds count
 	var rd=0;
 	var rdRe = /^RD([0-9]+)$/;
 	for (var i=0; i<inps.length; i++)
