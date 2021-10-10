@@ -37,12 +37,13 @@
 			tmp=(nr<10) ? '0'+nr : nr;
 			team2 = document.getElementById('RD'+rd+'-team'+tmp);
 			score2 = document.getElementById('RD'+rd+'-score'+tmp);
-			if (parseInt(score1.value)>parseInt(score2.value))
+			//txt = score1.value+'>'+ score2.value + '? = '+(parseInt(score1.value)>parseInt(score2.value))+'\n' + txt;
+			if (parseInt(score1.value)>parseInt(score2.value) || score1.value.indexOf('wo')==0)
 			{
 				team1.the_winner = 1;
 				score1.the_winner = 1;
 			}
-			else if (parseInt(score1.value)<parseInt(score2.value))
+			else if (parseInt(score1.value)<parseInt(score2.value) || score2.value.indexOf('wo')==0)
 			{
 				team2.the_winner = 1;
 				score2.the_winner = 1;
@@ -173,7 +174,7 @@ function pobierz()
 var szablon = new Array();
 
 //
-// 5 rundy (32 zawodników)
+// 5 rund (32 zawodników)
 szablon[5] ="\
 {{32TeamBracket\n\
 | RD1 =\n\
