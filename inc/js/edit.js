@@ -12,17 +12,12 @@
 	for (var i=0; i<inps.length; i++)
 	{
 		var m = rdRe.exec(inps[i].id);
-		if (m)
-		{
-			if (inps[i].value!='')
-				rd++;
-		}
+		if (m && inps[i].value!='')
+			if (rd < m[1])	rd = m[1];
 		else
 			break;
 	}
 	var txt = szablon[rd];
-	
-	var rd_ignored = 5-rd;	// ilość ignorowanych rund
 	
 	//
 	// Zwycięstwa
@@ -36,12 +31,12 @@
 		for (var nr=1; nr<=team_nr; nr++)
 		{
 			tmp=(nr<10) ? '0'+nr : nr;
-			team1 = document.getElementById('RD'+(rd-rd_ignored)+'-team'+tmp);
-			score1 = document.getElementById('RD'+(rd-rd_ignored)+'-score'+tmp);
+			team1 = document.getElementById('RD'+rd+'-team'+tmp);
+			score1 = document.getElementById('RD'+rd+'-score'+tmp);
 			nr++;
 			tmp=(nr<10) ? '0'+nr : nr;
-			team2 = document.getElementById('RD'+(rd-rd_ignored)+'-team'+tmp);
-			score2 = document.getElementById('RD'+(rd-rd_ignored)+'-score'+tmp);
+			team2 = document.getElementById('RD'+rd+'-team'+tmp);
+			score2 = document.getElementById('RD'+rd+'-score'+tmp);
 			if (parseInt(score1.value)>parseInt(score2.value))
 			{
 				team1.the_winner = 1;
@@ -56,28 +51,10 @@
 		team_nr*=2;
 	}
 	
-	//
-	// Generowanie
-	//
 	var re,val;
 	for (var i=0; i<inps.length; i++)
 	{
-		if (rd==5)
-		{
-			re = new RegExp(inps[i].id+'[ ]*=[ ]*(.+)');
-		}
-		// pobieranie o rząd i więcej dalej niż normalnie
-		else
-		{
-			var cur_rd = 0;
-			id = inps[i].id.replace(rdRe, function(a,rd_num) {return 'RD'+(rd_num-1)});
-			if (cur_rd < 5-rd)
-			{
-				return;
-			}
-			re = new RegExp(id+'[ ]*=[ ]*(.+)');
-		}
-
+		re = new RegExp('('+inps[i].id+')[ ]*=[ ]*');
 		val=inps[i].value.replace(/[ \t]*$/,'').replace(/^[ \t]*/,'');
 		if (val=='')
 		{
@@ -105,32 +82,11 @@
 	el_sz.value = txt;
 }
 
-/*
-	Pobieranie danych z pola tekstowego do pól tabelki
-*/
 function pobierz()
 {
 	var el_sz = document.getElementById('pole_szablonu');
 	var txt = el_sz.value;
 	var inps = document.getElementsByTagName('input');
-
-	//
-	// Obsługiwane szablony
-	//
-	var rd=0;
-	if (txt.indexOf('{32TeamBracket')!=-1)
-	{
-		rd = 5;
-	}
-	else if (txt.indexOf('{16TeamBracket')!=-1)
-	{
-		rd = 4;
-	}
-	else
-	{
-		alert('Brak określenia szablonu lub nieobsługiwany szablon.')
-		return;
-	}
 
 	//
 	// czyszczenie nazw rund
@@ -148,26 +104,10 @@ function pobierz()
 	//
 	// pobieranie
 	//
-	var re,val,id;
-	rdRe = /^RD([0-9]+)/;
+	var re,val;
 	for (var i=0; i<inps.length; i++)
 	{
-		if (rd==5)
-		{
-			re = new RegExp(inps[i].id+'[ ]*=[ ]*(.+)');
-		}
-		// pobieranie o rząd i więcej dalej niż normalnie
-		else
-		{
-			var cur_rd = 0;
-			id = inps[i].id.replace(rdRe, function(a,rd_num) {return 'RD'+(rd_num-1)});
-			if (cur_rd < 5-rd)
-			{
-				return;
-			}
-			re = new RegExp(id+'[ ]*=[ ]*(.+)');
-		}
-		
+		re = new RegExp(inps[i].id+'[ ]*=[ ]*(.+)');
 		val = txt.match(re);
 		if (val==null)
 		{
