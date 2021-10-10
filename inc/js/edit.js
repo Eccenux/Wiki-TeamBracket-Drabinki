@@ -90,8 +90,11 @@ function pobierz()
 	var inps = document.getElementsByTagName('input');
 	
 	// spr. szablonu
-	if (txt.search(/\{\{32TeamBracket/i) < 0) {
-		alert('Nie znaleziono szablonu 32TeamBracket');
+	if (txt.search(/\{\{64TeamBracket/i) >= 0) {
+		alert(
+			'Uwaga! Używanie 64TeamBracket jest niezalecane (jest za szeroka i za wysoka).'
+			+'\n\nLepiej opisz pierwszą rundę osobno, albo podziel rozgrywki na dwie drabinki.'
+		);
 	}
 
 	//
