@@ -1,13 +1,13 @@
 /**
 	Templates for code of TeamBracket.
 	
-	szablon[r] = `template for n-round TeamBracket with empty params`.
+	tplsTeamBracket[r] = `template for n-round TeamBracket with empty params`.
 */
-var szablon = new Array();
+var tplsTeamBracket = new Array();
 
 //
 // 5 rund (32 zawodników)
-szablon[5] =`
+tplsTeamBracket[5] =`
 {{32TeamBracket|
 | RD1 =
 | RD2 =
@@ -215,7 +215,7 @@ szablon[5] =`
 
 //
 // 4 rundy (16 zawodników)
-szablon[4] =`
+tplsTeamBracket[4] =`
 {{16TeamBracket
 | RD1=
 | RD2=

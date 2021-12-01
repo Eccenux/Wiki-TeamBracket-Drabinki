@@ -5,7 +5,7 @@
 	var inps = document.getElementsByTagName('input');
 	
 	//
-	// Ilość rund
+	// Liczba rund
 	//
 	var rd=0;
 	var rdRe = /^RD([0-9]+)$/;
@@ -17,7 +17,19 @@
 		else
 			break;
 	}
-	var txt = szablon[rd];
+
+	//
+	// Tpl z liczby rund.
+	//
+	var txt = tplsTeamBracket[rd];
+	if (typeof txt !== 'string') {
+		alert(`
+			Błąd! Szablon z tą liczbą rund (${rd}) nie jest obsługiwany.
+			
+			Napisz do mnie na [[User:Nux]], żeby dodał obsługę szablonu.
+		`.replace(/\n\t*/g, '\n'));
+		return false;
+	}
 	
 	//
 	// Zwycięstwa
