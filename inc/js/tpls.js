@@ -331,3 +331,64 @@ tplsTeamBracket[4] =`
 | RD4-score02=
 }}
 `;
+
+//
+// 3 rundy (8 zawodników)
+tplsTeamBracket[3] =`
+{{8TeamBracket
+| RD1        = 
+| RD2        = 
+| RD3        = 
+
+| RD1-seed1  = 
+| RD1-team1  = 
+| RD1-score1 = 
+| RD1-seed2  = 
+| RD1-team2  = 
+| RD1-score2 = 
+
+| RD1-seed3  = 
+| RD1-team3  = 
+| RD1-score3 = 
+| RD1-seed4  = 
+| RD1-team4  = 
+| RD1-score4 = 
+
+| RD1-seed5  = 
+| RD1-team5  = 
+| RD1-score5 = 
+| RD1-seed6  = 
+| RD1-team6  = 
+| RD1-score6 = 
+
+| RD1-seed7  = 
+| RD1-team7  = 
+| RD1-score7 = 
+| RD1-seed8  = 
+| RD1-team8  = 
+| RD1-score8 = 
+
+
+| RD2-seed1  = 
+| RD2-team1  = 
+| RD2-score1 = 
+| RD2-seed2  = 
+| RD2-team2  = 
+| RD2-score2 = 
+
+| RD2-seed3  = 
+| RD2-team3  = 
+| RD2-score3 = 
+| RD2-seed4  = 
+| RD2-team4  = 
+| RD2-score4 = 
+
+
+| RD3-seed1  = 
+| RD3-team1  = 
+| RD3-score1 = 
+| RD3-seed2  = 
+| RD3-team2  = 
+| RD3-score2 = 
+}}
+`;

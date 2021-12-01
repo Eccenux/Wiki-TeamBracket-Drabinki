@@ -34,7 +34,6 @@
 	//
 	// Zwycięstwa
 	//
-	var tmp;
 	var team1,team2,score1,score2;
 	var team_nr=2;
 	
@@ -67,19 +66,21 @@
 	var re,val;
 	for (var i=0; i<inps.length; i++)
 	{
-		re = new RegExp('('+inps[i].id+')[ ]*=[ ]*');
+		const parameter = inps[i].id;
+		const parameterRe = idToParameterRe(parameter);
+		re = new RegExp('('+parameterRe+')[ ]*=[ ]*');
 		val=inps[i].value.replace(/[ \t]*$/,'').replace(/^[ \t]*/,'');
 		if (val=='')
 		{
 			continue;
 		}
 		// flaga
-		if (inps[i].id.indexOf('seed')>0 && val.indexOf('{')==-1)
+		if (parameter.indexOf('seed')>0 && val.indexOf('{')==-1)
 		{
 			val = '{{Flaga|'+val+'}}';
 		}
 		// zawodnik
-		else if (inps[i].id.indexOf('team')>0 && val.indexOf('[')==-1)
+		else if (parameter.indexOf('team')>0 && val.indexOf('[')==-1)
 		{
 			val = '[['+val+']]';
 		}
@@ -93,6 +94,19 @@
 	}
 	
 	el_sz.value = txt;
+}
+
+/**
+ * Input id to paramter RegExp.
+ * @param {String} parameter Input id. Ids are the same as the parmater name e.g. RD4-seed01
+ * @returns Paramter name matcher for wikicode.
+ */
+function idToParameterRe(parameter)
+{
+	// allow matching both *-seed01 and *-seed1 etc (for bracket 8 and below)
+	const parameterRe = parameter.replace(/(.+[a-z])[0]*([0-9])$/, '$10?$2');
+
+	return parameterRe;
 }
 
 function pobierz()
@@ -128,11 +142,12 @@ function pobierz()
 	var re,val;
 	for (var i=0; i<inps.length; i++)
 	{
-		let id = inps[i].id;	// id = parameter name (e.g. RD1-seed01)
-		let isHeader = id.search(/^RD[0-9]+$/) === 0;
+		const parameter = inps[i].id;	// id = parameter name (e.g. RD1-seed01)
+		const isHeader = parameter.search(/^RD[0-9]+$/) === 0;
 		
 		// match parameter + value
-		re = new RegExp(id+'[ ]*=[ ]*(.+)');
+		const parameterRe = idToParameterRe(parameter);
+		re = new RegExp(parameterRe+'[ ]*=[ ]*(.+)');
 		let matches = txt.match(re);
 		if (matches==null)
 		{
@@ -140,7 +155,7 @@ function pobierz()
 		}
 		val = matches[1];
 		
-		//console.log({id:id, val:val});
+		//console.log({parameter:parameter, val:val});
 		// usuwanie spacji (trim)
 		val = val.replace(/[ \t]*$/,'').replace(/^[ \t]*/,'');
 		// i boldów
@@ -154,12 +169,12 @@ function pobierz()
 			continue;
 		}
 		// flaga
-		if (id.indexOf('seed')>0 && val.indexOf('{')!=-1)
+		if (parameter.indexOf('seed')>0 && val.indexOf('{')!=-1)
 		{
 			val = val.replace(/\{\{Flaga\|(.*)\}\}/i,'$1');
 		}
 		// zawodnik (usuń linki jeśli są)
-		else if (id.indexOf('team')>0 && val.indexOf('[')!=-1)
+		else if (parameter.indexOf('team')>0 && val.indexOf('[')!=-1)
 		{
 			val = val.replace(/^\[\[([^|\]]*)\]\]$/,'$1');
 		}
