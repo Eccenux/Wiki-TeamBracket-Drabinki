@@ -9,3 +9,6 @@ Obsługuje edycję szablonów:
 * 16TeamBracket -- 4 rundy (16 zawodników)
 * 8TeamBracket -- 3 rundy (8 zawodników)
 * 4TeamBracket -- 2 rundy (4 zawodników)
+
+Dostępny on-line:
+http://nostalgia.enux.pl/smp/drabinki/
