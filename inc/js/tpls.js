@@ -392,3 +392,33 @@ tplsTeamBracket[3] =`
 | RD3-score2 = 
 }}
 `;
+
+//
+// 2 rundy (4 zawodników)
+tplsTeamBracket[2] =`
+{{4TeamBracket
+| RD1=
+| RD2=
+
+| RD1-seed1=
+| RD1-team1=
+| RD1-score1=
+| RD1-seed2=
+| RD1-team2=
+| RD1-score2=
+
+| RD1-seed3=
+| RD1-team3=
+| RD1-score3=
+| RD1-seed4=
+| RD1-team4=
+| RD1-score4=
+
+| RD2-seed1=
+| RD2-team1=
+| RD2-score1=
+| RD2-seed2=
+| RD2-team2=
+| RD2-score2=
+}}
+`;
