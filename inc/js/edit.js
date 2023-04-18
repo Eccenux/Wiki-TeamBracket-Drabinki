@@ -1,4 +1,13 @@
-﻿function generuj()
+﻿class EdytorDrabinki {
+	constructor()
+	{
+		/**
+		 * Zmiana flag na rozstawienie.
+		 */
+		this.flagiRozstawienia = false;
+	}
+
+generuj()
 {
 	var el_sz = document.getElementById('pole_szablonu');
 
@@ -41,7 +50,7 @@
 	{
 		for (var nr=1; nr<=team_nr; nr++)
 		{
-			tmp=(nr<10) ? '0'+nr : nr;
+			let tmp=(nr<10) ? '0'+nr : nr;
 			team1 = document.getElementById('RD'+rd+'-team'+tmp);
 			score1 = document.getElementById('RD'+rd+'-score'+tmp);
 			nr++;
@@ -67,13 +76,14 @@
 	for (var i=0; i<inps.length; i++)
 	{
 		const parameter = inps[i].id;
-		const parameterRe = idToParameterRe(parameter);
+		const parameterRe = this.idToParameterRe(parameter);
 		re = new RegExp('('+parameterRe+')[ ]*=[ ]*');
 		val=inps[i].value.replace(/[ \t]*$/,'').replace(/^[ \t]*/,'');
 		if (val=='')
 		{
 			continue;
 		}
+		if (this.flagiRozstawienia) {
 		// flaga
 		if (parameter.indexOf('seed')>0 && val.indexOf('{')==-1)
 		{
@@ -83,6 +93,7 @@
 		else if (parameter.indexOf('team')>0 && val.indexOf('[')==-1)
 		{
 			val = '[['+val+']]';
+		}
 		}
 		
 		if (inps[i].the_winner)
@@ -101,7 +112,7 @@
  * @param {String} parameter Input id. Ids are the same as the parmater name e.g. RD4-seed01
  * @returns Paramter name matcher for wikicode.
  */
-function idToParameterRe(parameter)
+idToParameterRe(parameter)
 {
 	// allow matching both *-seed01 and *-seed1 etc (for bracket 8 and below)
 	const parameterRe = parameter.replace(/(.+[a-z])[0]*([0-9])$/, '$10?$2');
@@ -109,7 +120,7 @@ function idToParameterRe(parameter)
 	return parameterRe;
 }
 
-function pobierz()
+pobierz()
 {
 	var el_sz = document.getElementById('pole_szablonu');
 	var txt = el_sz.value;
@@ -146,7 +157,7 @@ function pobierz()
 		const isHeader = parameter.search(/^RD[0-9]+$/) === 0;
 		
 		// match parameter + value
-		const parameterRe = idToParameterRe(parameter);
+		const parameterRe = this.idToParameterRe(parameter);
 		re = new RegExp(parameterRe+'[ ]*=[ ]*(.+)');
 		let matches = txt.match(re);
 		if (matches==null)
@@ -168,6 +179,7 @@ function pobierz()
 		{
 			continue;
 		}
+		if (this.flagiRozstawienia) {
 		// flaga
 		if (parameter.indexOf('seed')>0 && val.indexOf('{')!=-1)
 		{
@@ -177,6 +189,7 @@ function pobierz()
 		else if (parameter.indexOf('team')>0 && val.indexOf('[')!=-1)
 		{
 			val = val.replace(/^\[\[([^|\]]*)\]\]$/,'$1');
+		}
 		}
 		
 		inps[i].value=val;
@@ -197,7 +210,7 @@ function pobierz()
 			break;
 	}
 
-	var tmp, m;
+	var m;
 	var flaga,team,score;
 	var team_nr=2;
 	var flagaRe = /\{\{Flaga\|([^}\n]+)\}\}\s*/i;
@@ -205,17 +218,21 @@ function pobierz()
 	{
 		for (var nr=1; nr<=team_nr; nr++)
 		{
-			tmp=(nr<10) ? '0'+nr : nr;
+			let tmp=(nr<10) ? '0'+nr : nr;
 			flaga = document.getElementById('RD'+rd+'-seed'+tmp);
 			team = document.getElementById('RD'+rd+'-team'+tmp);
 			score = document.getElementById('RD'+rd+'-score'+tmp);
+			if (this.flagiRozstawienia) {
 			// przepisanie flagi na właściwe miejsce
 			if (m = flagaRe.exec(team.value))
 			{
 				flaga.value = m[1];
 				team.value = team.value.replace(flagaRe,'');
 			}
+			}
 		}
 		team_nr*=2;
 	}	
+}
+
 }

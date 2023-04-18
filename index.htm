@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl" dir="ltr">
 <head>
 	<title>Edytorek Drabinek</title>
@@ -6,9 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="./inc/css/main.css" />
 	<script type="text/javascript" src="./inc/js/tpls.js?307"></script>
 	<script type="text/javascript" src="./inc/js/edit.js?306"></script>
+	<script>
+		var edytorDrabinki = new EdytorDrabinki();
+	</script>
 </head>
 <body><a name="top" id="top"></a>
-	<p><a href="#wynik" onclick="generuj()">generuj</a> &bull; <a href="#wynik">pobieranie</a> &bull; &bull; <a href="http://pl.wikipedia.org/wiki/Wikipedia:Szablony_kraj%C3%B3w_z_flagami">Wikipedia:Szablony krajów z flagami (kody krajów)</a></p>
+	<p><a href="#wynik" onclick="edytorDrabinki.generuj()">generuj</a> &bull; <a href="#wynik">pobieranie</a> &bull; &bull; <a href="http://pl.wikipedia.org/wiki/Wikipedia:Szablony_kraj%C3%B3w_z_flagami">Wikipedia:Szablony krajów z flagami (kody krajów)</a></p>
 
 	<table border="0" cellpadding="0" cellspacing="0" style="font-size: 90%; margin:0px;">
 	<tr>
@@ -24,30 +27,32 @@
 	<td align="center" colspan="3" style="border:1px solid #aaa;" bgcolor="#f2f2f2" class="input_holder"><input type="text" id="RD5" value="Finał" /></td>
 
 	</tr>
-	<tr>
+
+	<tr class="widths-row">
+
 	<td width="1">&nbsp;</td>
 	<td width="35"></td>
-	<td width="130"></td>
+	<td width="250"></td>
 	<td width="22"></td>
 	<td width="5"></td>
 	<td width="5"></td>
 	<td width="35"></td>
-	<td width="130"></td>
+	<td width="250"></td>
 	<td width="22"></td>
 	<td width="5"></td>
 	<td width="5"></td>
 	<td width="35"></td>
-	<td width="130"></td>
+	<td width="250"></td>
 	<td width="22"></td>
 	<td width="5"></td>
 	<td width="5"></td>
 	<td width="35"></td>
-	<td width="130"></td>
+	<td width="250"></td>
 	<td width="22"></td>
 	<td width="5"></td>
 	<td width="5"></td>
 	<td width="35"></td>
-	<td width="130"></td>
+	<td width="250"></td>
 	<td width="22"></td>
 
 	</tr>
@@ -704,8 +709,8 @@
 	</tr>
 	</table>
 	
-	<p><a href="#top" onclick="pobierz()" id="wynik">pobierz</a> &bull; <a href="#top">generowanie/wpisywanie</a></p>
+	<p><a href="#top" onclick="edytorDrabinki.pobierz()" id="wynik">pobierz</a> &bull; <a href="#top">generowanie/wpisywanie</a></p>
 	<textarea id="pole_szablonu" style="width:100%; height:400px"></textarea>
-	<p><a href="#top" onclick="pobierz()">pobierz</a> &bull; <a href="#top">generowanie/wpisywanie</a></p>
+	<p><a href="#top" onclick="edytorDrabinki.pobierz()">pobierz</a> &bull; <a href="#top">generowanie/wpisywanie</a></p>
 </body>
 </html>
