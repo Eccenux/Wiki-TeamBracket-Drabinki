@@ -65,7 +65,7 @@
 		}
 
 		var re, val;
-		for (var i = 0; i < inps.length; i++) {
+		for (let i = 0; i < inps.length; i++) {
 			const parameter = inps[i].id;
 			const parameterRe = this.idToParameterRe(parameter);
 			re = new RegExp('(' + parameterRe + ')[ ]*=[ ]*');
@@ -135,7 +135,7 @@
 		// pobieranie
 		//
 		var re, val;
-		for (var i = 0; i < inps.length; i++) {
+		for (let i = 0; i < inps.length; i++) {
 			const parameter = inps[i].id; // id = parameter name (e.g. RD1-seed01)
 			const isHeader = parameter.search(/^RD[0-9]+$/) === 0;
 
@@ -176,19 +176,33 @@
 		//
 		// Porządki
 		//
-		// rounds count
+		if (this.flagiRozstawienia) {
+			let rd = this.liczbaRund(inps);
+			this.pobierzFlagiDoRozstawienia(rd);
+		}
+	}
+	/**
+	 * Liczba rund w drabince.
+	 */
+	liczbaRund(inps) {
 		var rd = 0;
 		var rdRe = /^RD([0-9]+)$/;
-		for (var i = 0; i < inps.length; i++) {
-			var m = rdRe.exec(inps[i].id);
+		for (let i = 0; i < inps.length; i++) {
+			let m = rdRe.exec(inps[i].id);
 			if (m)
 				if (rd < m[1]) rd = m[1];
 				else
 					break;
 		}
+		return rd;
+	}
 
+	/**
+	 * Wyciąganięcie flagi z pola gracza (team) do rozstawienia (seed).
+	 */
+	pobierzFlagiDoRozstawienia(rd) {
 		var m;
-		var flaga, team, score;
+		var flaga, team;
 		var team_nr = 2;
 		var flagaRe = /\{\{Flaga\|([^}\n]+)\}\}\s*/i;
 		for (; rd; rd--) {
@@ -196,13 +210,11 @@
 				let tmp = (nr < 10) ? '0' + nr : nr;
 				flaga = document.getElementById('RD' + rd + '-seed' + tmp);
 				team = document.getElementById('RD' + rd + '-team' + tmp);
-				score = document.getElementById('RD' + rd + '-score' + tmp);
-				if (this.flagiRozstawienia) {
-					// przepisanie flagi na właściwe miejsce
-					if (m = flagaRe.exec(team.value)) {
-						flaga.value = m[1];
-						team.value = team.value.replace(flagaRe, '');
-					}
+				// przepisanie flagi na właściwe miejsce
+				// eslint-disable-next-line no-cond-assign
+				if (m = flagaRe.exec(team.value)) {
+					flaga.value = m[1];
+					team.value = team.value.replace(flagaRe, '');
 				}
 			}
 			team_nr *= 2;

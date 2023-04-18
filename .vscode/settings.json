@@ -1,0 +1,19 @@
+{
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"files.exclude": {
+		"**/.git": true,
+		"**/.DS_Store": true,
+		"**/node_modules": true,
+
+		"**/*.lnk": true,
+		"_bkp/": true,
+	},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/bower_components": true,
+
+		"_bkp/": true,
+		"**/.tpl.64TeamBracket-split.js": true,
+	},
+}
